@@ -40,5 +40,5 @@
   - name: buat vhost
     template: src=vhostlb.conf.j2 dest=/etc/nginx/conf.d/vhostlb.conf
 
-   - name: restart lagi webnya
-     service: name=nginx state=restarted
+  - name: restart lagi webnya
+    service: name=nginx state=restarted
