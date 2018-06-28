@@ -1,4 +1,4 @@
-- hosts: webserver
+- hosts: loadbalance
   
   tasks:
   - name: install epel-repo
