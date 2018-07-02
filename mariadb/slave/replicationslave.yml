@@ -1,14 +1,14 @@
 - name: create user
   mysql_user:
    name: slave
-   host: 10.0.70.99
+   host: 10.0.50.189
    password: dhika123
    priv: "*.*:ALL,GRANT"
 
 - name: slave change master
   mysql_replication:
    mode: changemaster
-   master_host: 10.0.70.121
+   master_host: 10.0.50.185
    master_user: slave
    master_password: dhika123
    master_log_file: localhost-bin.000004
@@ -17,7 +17,7 @@
 - name: check slave
   mysql_replication:
    mode: getslave
-   login_host: 10.0.70.99
+   login_host: 10.0.50.189
    login_port: 3306
 
 - name: start slave
