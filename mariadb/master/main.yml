@@ -1,4 +1,4 @@
-- hosts: 10.0.50.185
+- hosts: 10.0.50.117
   vars:
    mysql_root_password: passwd
 
@@ -25,7 +25,7 @@
      priv: "*.*:ALL,GRANT"
 
     with_items:
-     - 10.0.50.185
+     - 10.0.50.117
      - 127.0.0.1
      - ::1
      - localhost
