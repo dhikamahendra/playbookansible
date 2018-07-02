@@ -11,7 +11,7 @@
    master_host: 10.0.50.185
    master_user: slave
    master_password: dhika123
-   master_log_file: localhost-bin.000004
+   master_log_file: 10-bin.000001
    master_log_pos: 245
 
 - name: check slave
