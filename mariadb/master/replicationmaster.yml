@@ -5,7 +5,7 @@
 - name: create user
   mysql_user:
    name: slave
-   host: 10.0.70.121
+   host: 10.0.50.185
    password: dhika123
    priv: "*.*:ALL,GRANT"
 
