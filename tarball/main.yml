@@ -128,3 +128,13 @@
 
   - name: create file ea
     command: echo "<?php phpinfo();" >> /var/www/info.php
+    
+  - name: firewall
+    firewalld:
+     service: http
+     permanent: true
+     state: enabled
+  
+  - name: reload firewall
+    service: firewalld
+    state: reloaded
