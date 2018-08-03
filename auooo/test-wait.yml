@@ -4,15 +4,15 @@
 - name: Get the contents of the last line in "{{ log_file }}" 
   command: tail -n 1 "{{ log_file }}"
   register: tail_output
-  delegate_to: 10.0.50.179
+  delegate_to: 10.0.50.88
    
 - name: Create a variable with a meaningful name
   set_fact:
    last_line_of_the_log_file: "{{ tail_output.stdout }}"   
-  delegate_to: 10.0.50.179   
+  delegate_to: 10.0.50.88   
 
 - name: Match "{{ wanted_pattern }}" appearing after "{{ last_line_of_the_log_file }}" in "{{ log_file }}"
   wait_for:
    path: "{{ log_file }}"
    search_regex: "{{ last_line_of_the_log_file }}\r(.*\r)*.*{{ wanted_pattern }}"
-  delegate_to: 10.0.50.179
+  delegate_to: 10.0.50.88
