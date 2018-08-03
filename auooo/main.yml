@@ -1,0 +1,32 @@
+- name: main
+  hosts: all
+  serial: 1
+
+  tasks:
+   - name: echo stop
+     command: echo stop
+
+   - name: wait until port stopped
+     wait_for:
+      host: 0.0.0.0
+      port: "{{ item }}"
+      delay: 10
+      state: stopped
+     with_items:
+      - 22
+      - 3306
+
+   - name: Verify Latest Log
+     include_tasks: test-wait.yml
+     when: inventory_hostname == '10.0.50.87'
+   
+   - name: echo gajelas
+     command: echo start
+   
+   - name: Pause for 1 minutes
+     pause: 
+      minutes: 1
+
+   - name: Validate Services Run
+     shell: tail -f /tmp/yoeh.txt
+
