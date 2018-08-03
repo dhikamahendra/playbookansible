@@ -3,21 +3,21 @@
   tasks:
   
    - name: Backup File something to local
-      copy:
-       src: /tmp/yoeh.txt
-       dest: /tmp/yoeh.txt.orig.${{ '%Y%m%d' }}
+     copy:
+      src: /tmp/yoeh.txt
+      dest: /tmp/yoeh.txt.orig.${{ '%Y%m%d' }}
 
-    - name: Backup File something to local
-      copy:
-       src: /tmp/uuraa.txt
-       dest: /tmp/uuraa.txt.orig.${{ '%Y%m%d' }}
+   - name: Backup File something to local
+     copy:
+      src: /tmp/uuraa.txt
+      dest: /tmp/uuraa.txt.orig.${{ '%Y%m%d' }}
 
-    - name: Backup File something to Jfrog
-      synchronize:
-       src: /tmp/yoeh.txt
-       dest: rsync://10.0.50.88/tmp
+   - name: Backup File something to Jfrog
+     synchronize:
+      src: /tmp/yoeh.txt
+      dest: rsync://10.0.50.88/tmp
 
-    - name: Backup File something to Jfrog
-      synchronize:
-       src: /tmp/uuraa.txt
-       dest: rsync://10.0.50.88/tmp
+   - name: Backup File something to Jfrog
+     synchronize:
+      src: /tmp/uuraa.txt
+      dest: rsync://10.0.50.88/tmp
