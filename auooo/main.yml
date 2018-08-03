@@ -1,5 +1,5 @@
 - name: main
-  hosts: all
+  hosts: test
   serial: 1
 
   tasks:
@@ -29,4 +29,3 @@
 
    - name: Validate Services Run
      shell: tail -f /tmp/yoeh.txt
-
