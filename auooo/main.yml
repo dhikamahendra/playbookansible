@@ -26,6 +26,3 @@
    - name: Pause for 1 minutes
      pause: 
       minutes: 1
-
-   - name: Validate Services Run
-     shell: tail -f /tmp/yoeh.txt
