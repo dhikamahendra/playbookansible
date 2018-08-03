@@ -1,0 +1,18 @@
+- name: Backup and Create New File
+  hosts: 10.0.50.87
+  tasks:
+    - name: Backup File something to local
+      command: cp /tmp/yoeh.txt /tmp/yoeh.txt.orig.$(date +%Y%m%d)
+
+    - name: Backup File something to local
+      command: cp /tmp/uuraa.txt /tmp/uuraa.txt.orig.$(date +%Y%m%d)
+
+    - name: Backup File something to Jfrog
+      synchronize:
+       src: /tmp/yoeh.txt
+       dest: rsync://10.0.50.88/tmp
+
+    - name: Backup File something to Jfrog
+      synchronize:
+       src: /tmp/uuraa.txt
+       dest: rsync://10.0.50.88/tmp
