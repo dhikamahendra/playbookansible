@@ -1,28 +1,11 @@
-- name: main
-  hosts: test
-  serial: 1
+- hosts: 10.0.50.62
 
   tasks:
-   - name: echo stop
-     command: echo stop
 
-   - name: wait until port stopped
-     wait_for:
-      host: 0.0.0.0
-      port: "{{ item }}"
-      delay: 10
-      state: stopped
-     with_items:
-      - 80
-      - 3306
+  - name: get the corresponding playbook
+    include_tasks: one.yml
+    when: make_your_choice == "1"
 
-   - name: Verify Latest Log
-     include_tasks: test-wait.yml
-     when: inventory_hostname == '10.0.50.87'
-   
-   - name: echo gajelas
-     command: echo start
-   
-   - name: Pause for 1 minutes
-     pause: 
-      minutes: 1
+  - name: get the corresponding playbook
+    include_tasks: two.yml
+    when: make_your_choice == "2"
