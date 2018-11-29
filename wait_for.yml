@@ -1,5 +1,5 @@
 - name: Ensure port on AG 1-5 is RUNNING
-  hosts: group-nbp-inventory-prd-ag15
+  hosts: localhost
   gather_facts: False
   tasks: 
   - name: Checking...
@@ -9,16 +9,8 @@
      delay: 10
      state: started
     with_items:
-      - 8002
-      - 9020
-      - 54002
-      - 55000
-      - 55001
-      - 55003
-      - 55004
-      - 54000
-      - 54001
-      - 54003
+      - 21
+      
     when: your_choice == "1"
     
 - name: Ensure port on AMR is RUNNING
