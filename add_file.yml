@@ -2,5 +2,7 @@
   hosts: localhost
   gather_facts: False
   tasks: 
+  - name: checking
+    shell: whoami
   - name: Checking...
-    command: touch /opt/test-$(date +%H:%M:%S)
+    shell: touch /opt/test-$(date +%H:%M:%S)
