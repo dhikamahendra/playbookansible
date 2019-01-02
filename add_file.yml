@@ -1,0 +1,6 @@
+- name: Ensure port on AG 1-5 is RUNNING
+  hosts: localhost
+  gather_facts: False
+  tasks: 
+  - name: Checking...
+    command: touch /opt/test-$(date +%H:%M:%S)
