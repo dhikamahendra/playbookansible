@@ -5,4 +5,4 @@
   - name: checking
     shell: whoami
   - name: Checking...
-    shell: touch /tmp/test-$(date +%H:%M:%S)
+    shell: touch /tmp/test
