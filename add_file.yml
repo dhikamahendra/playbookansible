@@ -5,4 +5,4 @@
   - name: checking
     shell: whoami
   - name: Checking...
-    shell: touch /tmp/test
+    shell: touch /tmp/test.txt
