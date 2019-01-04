@@ -1,5 +1,5 @@
 - name: Ensure port on AG 1-5 is RUNNING
-  hosts: 10.0.70.55
+  hosts: 10.0.70.53
   gather_facts: False
   tasks: 
   - name: checking
